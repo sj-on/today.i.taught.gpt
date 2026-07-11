@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Minutes of meetings between chaos and curiosity.",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy"
+    "clean": "rimraf _site",
+    "build": "npm run clean && eleventy",
+    "dev": "npm run clean && eleventy --serve"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1"
