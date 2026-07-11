@@ -21,6 +21,11 @@ layout: layouts/base.njk
   <div class="minute__body">
     {{ content | safe }}
   </div>
+
+  <footer class="minute__footer" aria-label="Entry closing">
+    <div class="minute__footer-rule" aria-hidden="true"></div>
+    <p class="minute__footer-text">Meeting adjourned.</p>
+  </footer>
 </article>
 
 <p class="back-link"><a href="/">&larr; back to the latest minutes</a></p>

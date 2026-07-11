@@ -225,6 +225,27 @@ a.minute__date:focus-visible .minute__full-date {
   margin: 0 0 1.1rem;
 }
 
+.minute__footer {
+  margin-top: 2.2rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.minute__footer-rule {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--rule), transparent);
+  margin-bottom: 0.8rem;
+}
+
+.minute__footer-text {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
 .minute__body li {
   margin-bottom: 0.4rem;
 }
