@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+---
+<article class="minute minute--solo">
+  <div class="minute__stamp" aria-hidden="true">recorded</div>
+
+  <header class="minute__head">
+    <p class="minute__date">
+      <span class="minute__weekday">{{ date | dateWeekday }}</span>
+      <span class="minute__full-date">{{ date | dateDisplay }}</span>
+    </p>
+    {% if tags and tags.length > 0 %}
+    <ul class="minute__tags">
+      {% for tag in tags %}
+      <li><a href="/tags/{{ tag | slugify }}/">{{ tag }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </header>
+
+  <div class="minute__body">
+    {{ content | safe }}
+  </div>
+</article>
+
+<p class="back-link"><a href="/">&larr; back to the latest minutes</a></p>

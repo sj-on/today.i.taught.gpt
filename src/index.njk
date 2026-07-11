@@ -1,0 +1,9 @@
+---
+layout: layouts/base.njk
+---
+{% if collections.entries.length > 0 %}
+  {% set entry = collections.entries[0] %}
+  {% include "partials/entry.njk" %}
+{% else %}
+  <p class="empty-note">No minutes on file yet. First meeting pending.</p>
+{% endif %}

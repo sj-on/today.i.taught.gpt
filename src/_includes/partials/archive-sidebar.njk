@@ -1,0 +1,21 @@
+<div class="archive">
+  <p class="archive__label">Archives</p>
+
+  {% for year, months in collections.archiveTree %}
+  <details class="archive__year" {% if loop.first %}open{% endif %}>
+    <summary>{{ year }} <span class="archive__count">({{ months | length }})</span></summary>
+    {% for month, entries in months %}
+    <details class="archive__month">
+      <summary>{{ month }} <span class="archive__count">({{ entries.length }})</span></summary>
+      <ul class="archive__days">
+        {% for entry in entries %}
+        <li>
+          <a href="{{ entry.url }}">{{ entry.data.date | dateDisplayShort }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </details>
+    {% endfor %}
+  </details>
+  {% endfor %}
+</div>

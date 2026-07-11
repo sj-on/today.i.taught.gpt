@@ -1,0 +1,21 @@
+<article class="minute">
+  <div class="minute__stamp" aria-hidden="true">recorded</div>
+
+  <header class="minute__head">
+    <a class="minute__date" href="{{ entry.url }}">
+      <span class="minute__weekday">{{ entry.data.date | dateWeekday }}</span>
+      <span class="minute__full-date">{{ entry.data.date | dateDisplay }}</span>
+    </a>
+    {% if entry.data.tags and entry.data.tags.length > 0 %}
+    <ul class="minute__tags">
+      {% for tag in entry.data.tags %}
+      <li><a href="/tags/{{ tag | slugify }}/">{{ tag }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </header>
+
+  <div class="minute__body">
+    {{ entry.templateContent | safe }}
+  </div>
+</article>

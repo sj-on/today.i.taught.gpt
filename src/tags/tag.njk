@@ -1,0 +1,17 @@
+---
+pagination:
+  data: collections.entryTagList
+  size: 1
+  alias: tag
+permalink: "/tags/{{ tag | slugify }}/"
+layout: layouts/base.njk
+eleventyComputed:
+  title: "tag: {{ tag }}"
+---
+{% set taggedEntries = collections.entries | withTag(tag) %}
+
+<p class="tag-heading">Minutes tagged <span class="tag-heading__name">{{ tag }}</span> ({{ taggedEntries.length }})</p>
+
+{% for entry in taggedEntries %}
+  {% include "partials/entry.njk" %}
+{% endfor %}
